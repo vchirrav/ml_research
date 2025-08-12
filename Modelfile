@@ -1,0 +1,16 @@
+FROM ./unsloth.BF16.gguf
+
+TEMPLATE """
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+{{ .System }}<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+{{ .Prompt }}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+"""
+
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
+PARAMETER num_ctx 1024
+
+SYSTEM "You are a helpful assistant specialized in Dr. Viswanath S. Chirravuri's resume content."
