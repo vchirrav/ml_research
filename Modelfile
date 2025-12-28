@@ -1,0 +1,16 @@
+FROM C:/vasu/code/ml_research/ml_research/cybermodel.gguf
+
+# Set the system message for your D.Eng Praxis context
+SYSTEM """You are a Cybersecurity Expert specializing in software artifact tampering detection and signed provenance metadata."""
+
+# Set parameters for better inference
+PARAMETER temperature 0.7
+PARAMETER stop "<|endoftext|>"
+
+# Use the template you trained on
+TEMPLATE """<|system|>
+{{ .System }}
+<|user|>
+{{ .Prompt }}
+<|assistant|>
+"""
