@@ -1,2 +1,12 @@
-.venv
-.vscode
+# Large ML Files
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Environment and Data
+.venv/
+__pycache__/
+*.jsonl
+logs/
